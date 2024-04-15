@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhisperingCode</title>
+    <style>
+         body {
+           background-color: lightblue;
+         }
+        /* Style the side navigation */
+        .sidenav {
+            height: 100%;
+            width: 0; /* Initially hidden */
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            padding-top: 60px;
+            transition: 0.5s; /* Smooth transition */
+        }
+
+        /* Style the navigation links */
+        .sidenav a {
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        /* Change color on hover */
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+
+        /* Style the menu icon button */
+        .menu-icon {
+            position: fixed;
+            z-index: 2;
+            top: 20px;
+            left: 20px;
+            cursor: pointer;
+            color: #fff; /* Change menu icon color */
+        }
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background-color: #fff; /* Change menu icon color */
+            margin: 5px 0;
+            transition: 0.4s;
+        }
+
+        /* Rotate the bars to form an X */
+        .change .bar:nth-child(1) {
+            -webkit-transform: rotate(-45deg) translate(-5px, 6px);
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .change .bar:nth-child(2) {
+            opacity: 0;
+        }
+
+        .change .bar:nth-child(3) {
+            -webkit-transform: rotate(45deg) translate(-5px, -6px);
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        /* Adjust main content margin */
+        .main-content {
+            margin-left: 0;
+            transition: margin-left 0.5s; /* Smooth transition */
+            z-index: 1; /* Ensure content is above navigation */
+        }
+
+        /* Adjust main content margin when navigation bar is open */
+        .sidenav-open .main-content {
+            margin-left: 250px;
+        }
+        #main {
+          margin-left: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Menu icon button -->
+<div class="menu-icon" onclick="toggleNav()">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+</div>
+
+<!-- Side navigation -->
+<div id="sidenav" class="sidenav">
+    <a href="#home">Home</a>
+    <a href="#vlogs">Vlogs</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+</div>
+
+<!-- Page content -->
+<div id="main" class="main-content">
+    <h1>Welcome to WhisperingCode</h1>
+    <p>This is the main content of your website.</p>
+</div>
+
+<script>
+    function toggleNav() {
+        var sidenav = document.getElementById("sidenav");
+        var mainContent = document.getElementById("main");
+        var menuIcon = document.querySelector(".menu-icon");
+
+        if (sidenav.style.width === "250px") {
+            sidenav.style.width = "0";
+            mainContent.classList.remove("sidenav-open");
+            menuIcon.classList.remove("change");
+        } else {
+            sidenav.style.width = "250px";
+            mainContent.classList.add("sidenav-open");
+            menuIcon.classList.add("change");
+        }
+    }
+</script>
+</body>
+</html>
