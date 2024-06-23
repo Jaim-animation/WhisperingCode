@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WhisperingCode | How Computers Work: Tech Vlog</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      background-image: linear-gradient(90deg, #8b008b, #1e90ff);
+      font-size: 24px;
+      margin: 0;
+      padding: 0;
+    }
+    .sidenav {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      padding-top: 60px;
+      transition: 0.5s;
+    }
+    .sidenav a {
+      padding: 10px 20px;
+      text-decoration: none;
+      font-size: 18px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
+    .sidenav a:hover {
+      color: #f1f1f1;
+    }
+    .menu-icon {
+      position: fixed;
+      z-index: 2;
+      top: 20px;
+      left: 20px;
+      cursor: pointer;
+      color: #fff;
+    }
+    .bar {
+      width: 25px;
+      height: 3px;
+      background-color: #fff;
+      margin: 5px 0;
+      transition: 0.4s;
+    }
+    .change .bar:nth-child(1) {
+      transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .change .bar:nth-child(2) {
+      opacity: 0;
+    }
+    .change .bar:nth-child(3) {
+      transform: rotate(45deg) translate(-5px, -6px);
+    }
+    .main-content {
+      margin-left: 0;
+      transition: margin-left 0.5s;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      padding: 20px;
+    }
+    .centered {
+      text-align: center;
+    }
+    #main {
+      margin-left: 50px;
+    }
+    h1, h2, h3, p, span {
+      font-family: "Single Day", cursive;
+      font-weight: 400;
+      font-style: normal;
+    }
+    h1 {
+      line-height: 1.2em;
+    }
+    p {
+      line-height: 1.5em;
+    }
+    img {
+      width: 100%;
+    }
+    @media (max-width: 768px) {
+      body {
+        font-size: 20px;
+      }
+      .main-content {
+        padding: 20px;
+      }
+      iframe {
+        width: 100%;
+        height: 800px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <br>
+  <h1 style="font-family: sans;">How Computers Work</h1>
+  <br>
+  <img src="https://i.ibb.co/rszPxtk/Man-Working-With-Laptop.jpg" alt="Man Working With Laptop">
+  <br>
+  <p style="font-family: monospace;">Have you ever wondered how your computer works? It’s not an easy question to answer, and no one in the world knows the full process! But if you want a basic idea, this article is for you!</p>
+  <h2>1. Pixels</h2>
+  <img src="https://c8.alamy.com/comp/FBBWHM/abstract-pixel-colorful-background-vector-illustration-eps10-FBBWHM.jpg" alt="Colorful Pixel Image">
+  <br>
+  <p style="font-family: monospace;">A computer screen consists of tiny squares called <strong>pixels</strong>. Each pixel contains three subpixels: one <span style="color: red;">red</span>, one <span style="color: blue;">blue</span>, and one <span style="color: rgb(0, 127, 0);">green</span>. By controlling the brightness of these subpixels, a pixel can display different colors. A single pixel can show 256 * 256 * 256 = 16,777,216 colors. This is how your screen displays images.</p>
+  <br>
+  <h2>2. Binaries</h2>
+  <img src="https://cdn.pixabay.com/photo/2022/05/24/14/15/binary-code-7218631_960_720.jpg" alt="Image With Binary Codes">
+  <br>
+  <p style="font-family: monospace;">To control the screen, computers use thousands of tiny machines called <strong>microchips</strong>, which are made using transistors that can be as small as a few nanometers.</p>
+  <p style="font-family: monospace;">These microchips use electrical circuits that can be turned on or off. A state of <i>on</i> is represented by <i>1</i>, and a state of <i>off</i> is represented by <i>0</i>. This binary system, also known as <strong>machine code</strong>, is the foundation of computer operations. You are reading this article because some circuits are displaying it on your screen.</p>
+  <p style="font-family: monospace;">However, not all computers use the same machine code. Just as different brands of lights work differently, different computer <i>architectures</i> use different machine codes. Some popular architectures are:</p>
+  <ol style="font-family: monospace;">
+    <li>x86</li>
+    <li>x64</li>
+    <li>ARM</li>
+  </ol>
+  <p style="font-family: monospace;"><big><strong>Important Note:</strong></big> Don't try to learn machine code/binary; it’s EXTREMELY complicated. Bugs are very hard to fix and almost impossible to edit. For example, a simple number addition in binary is: 01100110 00001010.</p>
+
+  <!-- Menu icon button -->
+  <div class="menu-icon" onclick="toggleNav()">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </div>
+
+  <!-- Side navigation -->
+  <div id="sidenav" class="sidenav">
+    <a href="#">Home</a>
+    <a href="vlog.html">Vlogs</a>
+    <a href="FAC.html">FAC</a>
+  </div>
+
+  <hr style="border: 5px solid orange;">
+  <div id="main" class="main-content">
+    <h1 class="centered"> Hi! </h1>
+    <p class="centered"> <big style="display: inline-block;"> I am Jaim</big>, a hobbyist developer with skills in HTML, JS, CSS, PHP, and Lua. I am here <strong>to help you on your programming journey, whether you are a beginner, intermediate, hobbyist (like me 😉), or professional</strong>.</p>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe0vmq_G46oPEn6vuqJyjFPRmbVWAXiaOkxZOKdg4XC2T-EtA/viewform?embedded=true" width="640" height="1100px" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+  </div>
+
+  <script>
+    function toggleNav() {
+      var sidenav = document.getElementById("sidenav");
+      var mainContent = document.getElementById("main");
+      var menuIcon = document.querySelector(".menu-icon");
+
+      if (sidenav.style.width === "250px") {
+        sidenav.style.width = "0";
+        mainContent.classList.remove("sidenav-open");
+        menuIcon.classList.remove("change");
+      } else {
+        sidenav.style.width = "250px";
+        mainContent.classList.add("sidenav-open");
+        menuIcon.classList.add("change");
+      }
+    }
+  </script>
+</body>
+</html>
